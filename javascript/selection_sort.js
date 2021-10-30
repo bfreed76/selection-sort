@@ -1,5 +1,11 @@
 function selectionSort(arr) {
-  // type your code here
+  
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > arr[i+1]) {
+      
+    }
+  }
+
 }
 
 if (require.main === module) {
@@ -19,5 +25,7 @@ if (require.main === module) {
 
 module.exports = selectionSort;
 
-// Please add your pseudocode to this file
-// And a written explanation of your solution
+/* iterate thru arr, finding the smallest variable
+then unshifting it to the front of the array. Repeat
+until iterations = arr.length.
+*/ 
