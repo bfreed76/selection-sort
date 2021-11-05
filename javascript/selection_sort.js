@@ -1,6 +1,4 @@
 function selectionSort(arr) {
-  let startTime = new Date()
-  console.log("start time: ", startTime)
   let newArr = []
   let counter = arr.length
   for (let i = 0; i < counter; i++) {
@@ -8,9 +6,9 @@ function selectionSort(arr) {
     let index = arr.indexOf(min)
     arr.splice(index, 1)
     newArr.push(min)
-    console.log("min: ", min, "index: ", index, "arr:", newArr)
+    // console.log("min: ", min, "index: ", index, "arr:", newArr)
   }
-  console.log("end time: ", startTime)
+
   return newArr
 }
 
@@ -32,14 +30,21 @@ if (require.main === module) {
     longInput.push(Math.random());
   }
 
+  const startTime = Date.now();
+
   const longerInput = [];
 
   for (let i = 0; i < 1000; ++i) {
-    longInput.push(Math.random());
+    selectionSort([2,1])
+    selectionSort(longInput);
   }
 
-  console.log("longInput/100x: ", selectionSort(longInput) )
-  console.log("longerInput/1000x: ", selectionSort(longInput) )
+  const avgTime = (Date.now() - startTime) / 2000
+
+  console.log(avgTime)
+
+  // console.log("longInput/100x: ", selectionSort(longInput) )
+  // console.log("longerInput/1000x: ", selectionSort(longerInput) )
 
 //   store the current time in a variable called start time
 // loop 1000 times:
